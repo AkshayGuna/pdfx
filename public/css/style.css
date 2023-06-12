@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 8vh;
+    background: #CBE9E6;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    font-size: 4vh;
+    margin: 2vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: #DBDCCA;
+}
+
+.upload {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 3vh 2vw;
+}
+
+.upload form h1 {
+    text-align: center;
+    padding: 1vh 1vw 2vh 1vw;
+}
+
+.lable {
+    font-size: 19px;
+}
+
+.mendatory {
+    margin: 2vh 0 1vh 0;
+    color: red;
+}
+
+.file {
+    display: block;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 1vw;
+}
+
+.submit {
+    display: block;
+    background-color: #595953;
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background: black;
+    color: white;
+    width: 100vw;
+    height: 5vh;
+}
