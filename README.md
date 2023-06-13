@@ -63,7 +63,7 @@ This project is provided as-is, without any warranty or guarantee of any kind. U
 
 ## Contact
 
-For any inquiries or questions, please contact gunaakshay100@gmail.com .
+For any inquiries or questions, please contact akshayguna.developer@gmail.com .
 
 ---
 
