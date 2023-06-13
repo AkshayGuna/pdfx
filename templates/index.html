@@ -19,11 +19,10 @@
 
     <div class="container">
         <div class="upload">
-            <form method="post" action="/merge" enctype="multipart/form-data">
+            <form method="post" target="_blank" action="/merge" enctype="multipart/form-data">
                 <h1>PDF Merger Tool</h1>
                 <div class="form">
                     <label class="lable" for="exampleFormControlFile1">Select the input files that you want to merge</label>
-                    <p class="mendatory" for="exampleFormControlFile1"><span>*</span>You can only add 2 Files</p>
                     <input type="file" name="pdfs" class="file" id="exampleFormControlFile1" multiple accept=".pdf">
                     <div class="center">
                         <input class="submit" type="submit" value="Submit">

@@ -12,22 +12,28 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "templates/index.html"))
 })
 
-app.post('/merge', upload.array('pdfs', 2), async(req, res, next) => {
+app.post('/merge', upload.array('pdfs', 1000), async(req, res, next) => {
     const uploadedFiles = req.files; // Array of uploaded files
     // console.log(uploadedFiles)
 
-    const files = async(p1, p2) => {
+    // Check if the number of uploaded files is more than 1000
+    if (uploadedFiles.length > 1000) {
+        return res.status(400).send('You can upload a maximum of 1000 files.');
+    }
+
+    const files = async(uploadedFile) => {
         let merger = new PDFMerger(); // Create a new instance for each merge operation
 
-        await merger.add(p1);
-        await merger.add(p2);
+        for (const file of uploadedFile) {
+            await merger.add(file);
+        }
 
         let d = new Date().getTime();
         await merger.save(`pdfs/${d}.pdf`); //save under given name and reset the internal document
         return d
     }
 
-    let d = await files(path.join(__dirname, req.files[0].path), path.join(__dirname, req.files[1].path))
+    let d = await files(req.files.map(file => path.join(__dirname, file.path)))
     res.redirect(`http://localhost:3000/static/${d}.pdf`)
 
 });
